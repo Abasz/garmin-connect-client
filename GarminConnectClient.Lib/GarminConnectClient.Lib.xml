@@ -1595,6 +1595,20 @@
         <member name="M:GarminConnectClient.Lib.Services.Client.Authenticate">
             <inheritdoc />
             <summary>
+            Authenticates this instance with the default credentials
+            </summary>
+            <returns>
+            Tuple of Cookies and HTTP handler
+            </returns>
+            <exception cref="T:System.Exception">
+            SSO hostname is missing
+            or
+            Could not match service ticket.
+            </exception>
+        </member>
+        <member name="M:GarminConnectClient.Lib.Services.Client.Authenticate(System.String,System.String)">
+            <inheritdoc />
+            <summary>
             Authenticates this instance.
             </summary>
             <returns>
@@ -1624,6 +1638,16 @@
             <param name="container">The container.</param>
             <param name="cookieName">Name of the cookie.</param>
             <exception cref="T:System.Exception">Missing cookie {cookieName}</exception>
+        </member>
+        <member name="M:GarminConnectClient.Lib.Services.Client.IsLoggedIn">
+            <summary>
+            Check if user has already been logged in.
+            </summary>
+        </member>
+        <member name="M:GarminConnectClient.Lib.Services.Client.Logout">
+            <summary>
+            Log user out by removing cookies
+            </summary>
         </member>
         <member name="M:GarminConnectClient.Lib.Services.Client.DownloadActivityFile(System.Int64,GarminConnectClient.Lib.Enum.ActivityFileTypeEnum)">
             <inheritdoc />
@@ -1755,11 +1779,6 @@
             <param name="url">The URL.</param>
             <param name="errorMessage">The error message.</param>
             <returns></returns>
-        </member>
-        <member name="M:GarminConnectClient.Lib.Services.Client.Finalize">
-            <summary>
-            Finalizes an instance of the <see cref="T:GarminConnectClient.Lib.Services.Client" /> class.
-            </summary>
         </member>
         <member name="T:GarminConnectClient.Lib.Services.CloudStorage">
             <inheritdoc />
